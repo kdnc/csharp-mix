@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-creating-a-generics-list
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-generics-new-constraint", "02-generics-new-constraint\02-generics-new-constraint.csproj", "{096F398A-E00A-4C55-A0C1-7DED684EE38A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-generics-interface-constraint", "03-generics-interface-constraint\03-generics-interface-constraint.csproj", "{DC34A50D-5423-4855-A98E-4E6C3CDE3FBC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{096F398A-E00A-4C55-A0C1-7DED684EE38A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{096F398A-E00A-4C55-A0C1-7DED684EE38A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{096F398A-E00A-4C55-A0C1-7DED684EE38A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC34A50D-5423-4855-A98E-4E6C3CDE3FBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC34A50D-5423-4855-A98E-4E6C3CDE3FBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC34A50D-5423-4855-A98E-4E6C3CDE3FBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC34A50D-5423-4855-A98E-4E6C3CDE3FBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
