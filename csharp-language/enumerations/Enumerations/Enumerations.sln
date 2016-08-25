@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-creating-an-enum", "01-creating-an-enum\01-creating-an-enum.csproj", "{33DF25FB-93FA-460B-A7BD-5118636459A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-enum-with-a-base-type", "02-enum-with-a-base-type\02-enum-with-a-base-type.csproj", "{E4A82B9B-F922-49CB-8BF5-8E889E727B03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-initializing-an-enum", "03-initializing-an-enum\03-initializing-an-enum.csproj", "{05C30288-E7DA-4154-9FFC-689A6242AF6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04-converting-an-enum", "04-converting-an-enum\04-converting-an-enum.csproj", "{A058D0B4-EF82-4FD0-8BB0-D1EB48AA1233}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33DF25FB-93FA-460B-A7BD-5118636459A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33DF25FB-93FA-460B-A7BD-5118636459A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33DF25FB-93FA-460B-A7BD-5118636459A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33DF25FB-93FA-460B-A7BD-5118636459A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4A82B9B-F922-49CB-8BF5-8E889E727B03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4A82B9B-F922-49CB-8BF5-8E889E727B03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4A82B9B-F922-49CB-8BF5-8E889E727B03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4A82B9B-F922-49CB-8BF5-8E889E727B03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05C30288-E7DA-4154-9FFC-689A6242AF6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05C30288-E7DA-4154-9FFC-689A6242AF6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05C30288-E7DA-4154-9FFC-689A6242AF6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05C30288-E7DA-4154-9FFC-689A6242AF6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A058D0B4-EF82-4FD0-8BB0-D1EB48AA1233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A058D0B4-EF82-4FD0-8BB0-D1EB48AA1233}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A058D0B4-EF82-4FD0-8BB0-D1EB48AA1233}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A058D0B4-EF82-4FD0-8BB0-D1EB48AA1233}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
