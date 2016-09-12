@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-using-async-await", "02-using-async-await\02-using-async-await.csproj", "{11EA96F6-E0AF-4693-9C41-A117E5BDAC55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-invoking-an-asynchronous-task", "01-invoking-an-asynchronous-task\01-invoking-an-asynchronous-task.csproj", "{C2286440-3895-48C7-A7A1-A226A97FC991}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11EA96F6-E0AF-4693-9C41-A117E5BDAC55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11EA96F6-E0AF-4693-9C41-A117E5BDAC55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11EA96F6-E0AF-4693-9C41-A117E5BDAC55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11EA96F6-E0AF-4693-9C41-A117E5BDAC55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2286440-3895-48C7-A7A1-A226A97FC991}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2286440-3895-48C7-A7A1-A226A97FC991}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2286440-3895-48C7-A7A1-A226A97FC991}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2286440-3895-48C7-A7A1-A226A97FC991}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
