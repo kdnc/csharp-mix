@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-using-async-await", "02-using-async-await\02-using-async-await.csproj", "{11EA96F6-E0AF-4693-9C41-A117E5BDAC55}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04-Task.Wait-vs-AsyncAwait", "04-Task.Wait-vs-AsyncAwait\04-Task.Wait-vs-AsyncAwait.csproj", "{11EA96F6-E0AF-4693-9C41-A117E5BDAC55}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-creating-a-task-v1-task.start", "01-creating-a-task-v1-task.start\01-creating-a-task-v1-task.start.csproj", "{C2286440-3895-48C7-A7A1-A226A97FC991}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-creating-a-task-v2-task.run", "02-creating-a-task-v2-task.run\02-creating-a-task-v2-task.run.csproj", "{A15E109B-87EF-4FBC-8025-A98922A6E996}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-creating-a-task-v3-Task.Factory.StartNew", "03-creating-a-task-v2-Task.Factory.StartNew\03-creating-a-task-v3-Task.Factory.StartNew.csproj", "{ADDD7477-ED12-400D-9264-F63460D7CE6F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-creating-a-task-v3-Task.Factory.StartNew", "03-creating-a-task-v3-Task.Factory.StartNew\03-creating-a-task-v3-Task.Factory.StartNew.csproj", "{ADDD7477-ED12-400D-9264-F63460D7CE6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
