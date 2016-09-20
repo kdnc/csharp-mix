@@ -9,6 +9,7 @@ namespace test
     class Program
     {
 //        https://stephenhaunts.com/2014/10/10/simple-async-await-example-for-asynchronous-programming/
+//        http://stackoverflow.com/questions/9519414/whats-the-difference-between-task-start-wait-and-async-await
         static void Main(string[] args)
         {
 //            ExecuteTaskWaitExample();
