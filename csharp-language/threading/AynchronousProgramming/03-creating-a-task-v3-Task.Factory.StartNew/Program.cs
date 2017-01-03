@@ -13,7 +13,12 @@ namespace test
         {
             Thread.CurrentThread.Name = "Main";
 
-            // Better: Create and start the task in one operation. 
+            /* 
+            CODE BLOCK EXPLANATION - 1
+            * Create and start the task in one operation. 
+             
+            * Use Task.Factory.StartNew<string>() for TPL prior to .NET 4.5
+            */
             Task taskA = Task.Factory.StartNew(() => Console.WriteLine("Hello from taskA."));
 
             // Output a message from the calling thread.

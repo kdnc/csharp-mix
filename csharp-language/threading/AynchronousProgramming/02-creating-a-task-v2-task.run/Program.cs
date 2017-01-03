@@ -13,7 +13,14 @@ namespace test
         {
             Thread.CurrentThread.Name = "Main";
 
-            // Define and run the task.
+            /* 
+            CODE BLOCK EXPLANATION - 1
+            * The code that is to run in a new thread is defined in the delegate 
+            (of type Action in this case) passed to the Task.Run() method.
+             
+            * Notice that following the call to Task.Run() the Action passed as 
+            the argument immediately starts executing.
+            */
             Task taskA = Task.Run(() => Console.WriteLine("Hello from taskA."));
 
             // Output a message from the calling thread.
@@ -25,6 +32,9 @@ namespace test
         }
     }
 }
-// The example displays output like the following:
-//       Hello from thread 'Main'.
-//       Hello from taskA.
+/* 
+CODE BLOCK EXPLANATION - 2
+The example displays output like the following:
+   Hello from thread 'Main'.
+   Hello from taskA.
+*/
