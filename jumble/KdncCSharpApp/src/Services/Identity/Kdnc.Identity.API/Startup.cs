@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using IdentityServer4;
 using IdentityServer4.EntityFramework.DbContexts;
 using IdentityServer4.EntityFramework.Mappers;
+using Kdnc.Identity.API.Data;
+using Kdnc.Identity.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -36,7 +39,7 @@ namespace Kdnc.Identity.API
                 //.AddInMemoryIdentityResources(Config.GetIdentityResources())
                 //.AddInMemoryApiResources(Config.GetApiResources())
                 //.AddInMemoryClients(Config.GetClients())
-                .AddTestUsers(Config.GetUsers())
+                //.AddTestUsers(Config.GetUsers())
                 .AddConfigurationStore(options =>
                 {
                     options.ConfigureDbContext = builder =>
@@ -50,6 +53,25 @@ namespace Kdnc.Identity.API
                         builder.UseSqlServer(connectionString,
                             sql => sql.MigrationsAssembly(migrationsAssembly));
                 });
+
+            idsrvBuilder.AddResourceOwnerValidator<ResourceOwnerPasswordValidator>();
+            idsrvBuilder.AddProfileService<ProfileService>();
+            var a = services.AddDbContext<UserDbContext>(
+                builder =>
+                    builder.UseSqlServer(connectionString,
+                        options => options.MigrationsAssembly(migrationsAssembly)));
+
+            services.AddScoped<UserRepository>();
+            services.AddScoped<UserStore>();
+
+            services.AddAuthentication()
+                .AddGoogle("Google", options =>
+                {
+                    options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
+
+                    options.ClientId = "434483408261-55tc8n0cs4ff1fe21ea8df2o443v2iuc.apps.googleusercontent.com";
+                    options.ClientSecret = "3gcoTrEDPPJ0ukn_aYYT6PWo";
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,7 +82,7 @@ namespace Kdnc.Identity.API
                 app.UseDeveloperExceptionPage();
             }
             app.UseIdentityServer();
-//            InitializeDatabase(app);
+            InitializeDatabase(app);
 
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();

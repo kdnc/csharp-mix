@@ -18,6 +18,7 @@ using Microsoft.AspNetCore.Authentication;
 using IdentityServer4.Events;
 using IdentityServer4.Extensions;
 using IdentityServer4.Models;
+using Kdnc.Identity.API.Services;
 
 namespace Kdnc.Identity.API.UI
 {
@@ -29,7 +30,7 @@ namespace Kdnc.Identity.API.UI
     [SecurityHeaders]
     public class AccountController : Controller
     {
-        private readonly TestUserStore _users;
+        private readonly UserStore _users;
         private readonly IIdentityServerInteractionService _interaction;
         private readonly IEventService _events;
         private readonly AccountService _account;
@@ -40,13 +41,13 @@ namespace Kdnc.Identity.API.UI
             IHttpContextAccessor httpContextAccessor,
             IAuthenticationSchemeProvider schemeProvider,
             IEventService events,
-            TestUserStore users = null)
+            UserStore users)
         {
             // if the TestUserStore is not in DI, then we'll just use the global users collection
-            _users = users ?? new TestUserStore(TestUsers.Users);
             _interaction = interaction;
             _events = events;
             _account = new AccountService(interaction, httpContextAccessor, schemeProvider, clientStore);
+            _users = users;
         }
 
         /// <summary>
@@ -98,10 +99,9 @@ namespace Kdnc.Identity.API.UI
             if (ModelState.IsValid)
             {
                 // validate username/password against in-memory store
-                if (_users.ValidateCredentials(model.Username, model.Password))
+                if (await _users.ValidateCredentials(model.Username, model.Password))
                 {
-                    var user = _users.FindByUsername(model.Username);
-                    await _events.RaiseAsync(new UserLoginSuccessEvent(user.Username, user.SubjectId, user.Username));
+                    var user = await _users.FindByUsername(model.Username);
 
                     // only set explicit expiration here if user chooses "remember me". 
                     // otherwise we rely upon expiration configured in cookie middleware.
@@ -115,7 +115,7 @@ namespace Kdnc.Identity.API.UI
                         };
                     };
                     // issue authentication cookie with subject ID and username
-                    await HttpContext.SignInAsync(user.SubjectId, user.Username, props);
+                    await HttpContext.SignInAsync(user.SubjectId.ToString(), user.UserName, props);
 
                     // make sure the returnUrl is still valid, and if so redirect back to authorize endpoint or a local page
                     if (_interaction.IsValidReturnUrl(model.ReturnUrl) || Url.IsLocalUrl(model.ReturnUrl))
@@ -235,12 +235,12 @@ namespace Kdnc.Identity.API.UI
             // external provider's authentication result, and provision the user as you see fit.
             // 
             // check if the external user is already provisioned
-            var user = _users.FindByExternalProvider(provider, userId);
+            var user = await _users.FindByExternalProvider(provider, userId);
             if (user == null)
             {
                 // this sample simply auto-provisions new external user
                 // another common approach is to start a registrations workflow first
-                user = _users.AutoProvisionUser(provider, userId, claims);
+                user = await _users.AutoProvisionUser(provider, userId, claims);
             }
 
             var additionalClaims = new List<Claim>();
@@ -263,8 +263,8 @@ namespace Kdnc.Identity.API.UI
             }
 
             // issue authentication cookie for user
-            await _events.RaiseAsync(new UserLoginSuccessEvent(provider, userId, user.SubjectId, user.Username));
-            await HttpContext.SignInAsync(user.SubjectId, user.Username, provider, props, additionalClaims.ToArray());
+            await _events.RaiseAsync(new UserLoginSuccessEvent(provider, userId, user.SubjectId.ToString(), user.UserName));
+            await HttpContext.SignInAsync(user.SubjectId.ToString(), user.UserName, provider, props, additionalClaims.ToArray());
 
             // delete temporary cookie used during external authentication
             await HttpContext.SignOutAsync(IdentityServer4.IdentityServerConstants.ExternalCookieAuthenticationScheme);
