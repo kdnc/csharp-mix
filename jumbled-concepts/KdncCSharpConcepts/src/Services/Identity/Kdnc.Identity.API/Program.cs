@@ -14,6 +14,8 @@ namespace Kdnc.Identity.API
     {
         public static void Main(string[] args)
         {
+            Console.Title = "IdentityServer";
+
             BuildWebHost(args).Run();
         }
 
