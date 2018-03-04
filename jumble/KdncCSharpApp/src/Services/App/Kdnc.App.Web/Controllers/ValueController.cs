@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Kdnc.App.Web.Controllers
 {
+    [Authorize]
     public class ValueController: Controller
     {
         private readonly ValueApiService _valueService;

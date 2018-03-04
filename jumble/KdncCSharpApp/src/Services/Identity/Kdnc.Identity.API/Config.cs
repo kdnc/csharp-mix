@@ -58,8 +58,8 @@ namespace Kdnc.Identity.API
                         new Secret("secret".Sha256())
                     },
 
-                    RedirectUris = {"http://localhost:51705/signin-oidc"},
-                    PostLogoutRedirectUris = {"http://localhost:51705"},
+                    RedirectUris = {"http://localhost:50964/signin-oidc"},
+                    PostLogoutRedirectUris = {"http://localhost:50964"},
 
                     AllowedScopes =
                     {

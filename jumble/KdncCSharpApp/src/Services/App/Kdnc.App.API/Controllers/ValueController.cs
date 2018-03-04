@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Kdnc.App.API.Controllers
 {
-//    [Authorize]
+    [Authorize]
     public class ValueController : Controller
     {
         private readonly ValueRepo repo;
