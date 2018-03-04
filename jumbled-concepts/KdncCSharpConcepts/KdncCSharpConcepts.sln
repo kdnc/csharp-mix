@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kdnc.Web", "Kdnc.Web\Kdnc.Web.csproj", "{2506C3DC-F2FB-421C-A297-D35D964D2119}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F8AE6F82-239F-4CBC-8502-8766A292F5F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{C9756A93-0086-4DBB-B365-CB129A2F02D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{23E3E887-F0E9-4CDA-8154-6CDB8ABBDFD6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{50D0801D-1E39-440F-8941-F07124D99546}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{94D89F23-3F20-4E1B-A522-90F3E6B815A8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kdnc.App.Web", "src\Services\App\Kdnc.App.Web\Kdnc.App.Web.csproj", "{92EEE3A2-670E-4255-837C-0CF7895A4193}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kdnc.Identity.API", "src\Services\Identity\Kdnc.Identity.API\Kdnc.Identity.API.csproj", "{DE09F16E-0822-46D4-B237-EE412C802291}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +23,24 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2506C3DC-F2FB-421C-A297-D35D964D2119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2506C3DC-F2FB-421C-A297-D35D964D2119}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2506C3DC-F2FB-421C-A297-D35D964D2119}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2506C3DC-F2FB-421C-A297-D35D964D2119}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92EEE3A2-670E-4255-837C-0CF7895A4193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92EEE3A2-670E-4255-837C-0CF7895A4193}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92EEE3A2-670E-4255-837C-0CF7895A4193}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92EEE3A2-670E-4255-837C-0CF7895A4193}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE09F16E-0822-46D4-B237-EE412C802291}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE09F16E-0822-46D4-B237-EE412C802291}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE09F16E-0822-46D4-B237-EE412C802291}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE09F16E-0822-46D4-B237-EE412C802291}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{23E3E887-F0E9-4CDA-8154-6CDB8ABBDFD6} = {F8AE6F82-239F-4CBC-8502-8766A292F5F5}
+		{50D0801D-1E39-440F-8941-F07124D99546} = {23E3E887-F0E9-4CDA-8154-6CDB8ABBDFD6}
+		{94D89F23-3F20-4E1B-A522-90F3E6B815A8} = {23E3E887-F0E9-4CDA-8154-6CDB8ABBDFD6}
+		{92EEE3A2-670E-4255-837C-0CF7895A4193} = {50D0801D-1E39-440F-8941-F07124D99546}
+		{DE09F16E-0822-46D4-B237-EE412C802291} = {94D89F23-3F20-4E1B-A522-90F3E6B815A8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B6298216-C484-44BE-9A13-1320FAB175A4}
