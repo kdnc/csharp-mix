@@ -13,9 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{50D0801D-1E3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{94D89F23-3F20-4E1B-A522-90F3E6B815A8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kdnc.App.Web", "src\Services\App\Kdnc.App.Web\Kdnc.App.Web.csproj", "{92EEE3A2-670E-4255-837C-0CF7895A4193}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kdnc.CSharpApp.Web", "src\Services\App\Kdnc.App.Web\Kdnc.CSharpApp.Web.csproj", "{92EEE3A2-670E-4255-837C-0CF7895A4193}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kdnc.Identity.API", "src\Services\Identity\Kdnc.Identity.API\Kdnc.Identity.API.csproj", "{DE09F16E-0822-46D4-B237-EE412C802291}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kdnc.Identity.API", "src\Services\Identity\Kdnc.Identity.API\Kdnc.Identity.API.csproj", "{DE09F16E-0822-46D4-B237-EE412C802291}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
