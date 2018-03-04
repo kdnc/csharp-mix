@@ -79,13 +79,13 @@ namespace Kdnc.Identity.API
                 new TestUser
                 {
                     SubjectId = "d10841fe-d702-434b-9050-745eea366b87",
-                    Username = "Roland",
-                    Password = "password",
+                    Username = "abc",
+                    Password = "abc",
 
                     Claims = new List<Claim>
                     {
-                        new Claim("name", "Roland"),
-                        new Claim("website", "http://rolandguijt.com")
+                        new Claim("name", "Nuwan"),
+                        new Claim("website", "http://nuwanlanka.com")
                     }
                 }
             };

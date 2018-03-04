@@ -1,0 +1,25 @@
+﻿@using System.Threading.Tasks
+@using Kdnc.App.Web.Api
+@using Kdnc.App.Domain.Models
+@model IEnumerable<ValueModel>
+@inject ValueApiService ValueService
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-2">
+        <table class="table">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+            @foreach (var value in Model)
+            {
+            <tr>
+                <td>@value.Id</td>
+                <td>@value.Name</td>
+            </tr>
+            }
+        </table>
+
+    </div>
+</div>
+
