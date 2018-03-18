@@ -49,7 +49,7 @@ namespace Kdnc.App.API
             // appSettings (note: use this during development; in a production environment,
             // it's better to store the connection string in an environment variable)
             var connectionString = Configuration["connectionStrings:libraryDBConnectionString"];
-            services.AddDbContext<LibraryContext>
+            services.AddDbContext<ProductContext>
                 (options => options.UseSqlServer(Configuration.GetConnectionString("libraryDBConnectionString")));
 
             services.AddSingleton<ValueRepo>();
@@ -57,7 +57,7 @@ namespace Kdnc.App.API
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, 
-            ILoggerFactory loggerFactory, LibraryContext libraryContext)
+            ILoggerFactory loggerFactory, ProductContext productContext)
         {
             loggerFactory.AddConsole();
 
@@ -67,7 +67,7 @@ namespace Kdnc.App.API
                 app.UseDeveloperExceptionPage();
             }
 
-            libraryContext.EnsureSeedDataForContext();
+            productContext.EnsureSeedDataForContext();
 
             app.UseMvcWithDefaultRoute();
             app.UseMvc();
