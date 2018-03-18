@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Kdnc.App.API.Repositories;
+using Kdnc.App.Repository.DatabaseContext;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -14,12 +16,18 @@ namespace Kdnc.App.API
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
-
         public IConfiguration Configuration { get; }
+      
+        public Startup(IHostingEnvironment env)
+        {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appSettings.json", optional: false, reloadOnChange: true)
+                .AddJsonFile($"appSettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true)
+                .AddEnvironmentVariables();
+
+            Configuration = builder.Build();
+        }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -36,11 +44,20 @@ namespace Kdnc.App.API
 
                     options.ApiName = "kdncApi";
                 });
+
+            // register the DbContext on the container, getting the connection string from
+            // appSettings (note: use this during development; in a production environment,
+            // it's better to store the connection string in an environment variable)
+            var connectionString = Configuration["connectionStrings:libraryDBConnectionString"];
+            services.AddDbContext<LibraryContext>
+                (options => options.UseSqlServer(Configuration.GetConnectionString("libraryDBConnectionString")));
+
             services.AddSingleton<ValueRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, 
+            ILoggerFactory loggerFactory, LibraryContext libraryContext)
         {
             loggerFactory.AddConsole();
 
@@ -49,7 +66,11 @@ namespace Kdnc.App.API
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            libraryContext.EnsureSeedDataForContext();
+
             app.UseMvcWithDefaultRoute();
+            app.UseMvc();
         }
     }
 }

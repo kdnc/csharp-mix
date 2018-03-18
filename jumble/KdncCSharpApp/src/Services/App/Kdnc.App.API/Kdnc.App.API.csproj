@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Kdnc.App.Domain\Kdnc.App.Domain.csproj" />
+    <ProjectReference Include="..\Kdnc.App.Repository\Kdnc.App.Repository.csproj" />
   </ItemGroup>
 
 </Project>
