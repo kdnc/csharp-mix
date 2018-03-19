@@ -37,7 +37,7 @@ namespace Kdnc.Web
             .AddOpenIdConnect("oidc", b =>
             {
                 b.SignInScheme = "Cookies";
-                b.Authority = "http://localhost:53815";
+                b.Authority = "http://localhost:7000";
                 b.RequireHttpsMetadata = false;
 
                 b.ClientId = "kdncweb";
@@ -50,7 +50,7 @@ namespace Kdnc.Web
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<ValueApiService>();
-            services.AddSingleton(x => new HttpClient { BaseAddress = new Uri("http://localhost:62337") });
+            services.AddSingleton(x => new HttpClient { BaseAddress = new Uri("http://localhost:7002") });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

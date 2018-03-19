@@ -17,7 +17,7 @@ namespace Kdnc.App.API
             Console.Title = "API";
             var host = new WebHostBuilder()
                 .UseKestrel()
-                .UseUrls("http://localhost:62337")
+                .UseUrls("http://localhost:7002")
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()

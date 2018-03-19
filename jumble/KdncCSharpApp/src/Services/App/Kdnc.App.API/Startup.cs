@@ -39,7 +39,7 @@ namespace Kdnc.App.API
             services.AddAuthentication("Bearer")
                 .AddIdentityServerAuthentication(options =>
                 {
-                    options.Authority = "http://localhost:53815";
+                    options.Authority = "http://localhost:7000";
                     options.RequireHttpsMetadata = false;
 
                     options.ApiName = "kdncApi";
