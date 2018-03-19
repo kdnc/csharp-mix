@@ -50,7 +50,7 @@ namespace Kdnc.App.API
             // it's better to store the connection string in an environment variable)
             var connectionString = Configuration["connectionStrings:libraryDBConnectionString"];
             services.AddDbContext<ProductContext>
-                (options => options.UseSqlServer(Configuration.GetConnectionString("libraryDBConnectionString")));
+                (cfg => cfg.UseSqlServer(Configuration.GetConnectionString("libraryDBConnectionString")));
 
             services.AddSingleton<ValueRepo>();
         }
