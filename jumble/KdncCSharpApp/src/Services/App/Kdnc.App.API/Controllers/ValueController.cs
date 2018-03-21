@@ -9,7 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Kdnc.App.API.Controllers
 {
-    [Authorize]
+//    [Authorize]
+    [Route("api/[controller]")]
     public class ValueController : Controller
     {
         private readonly ValueRepo repo;
@@ -19,6 +20,8 @@ namespace Kdnc.App.API.Controllers
             this.repo = repo;
         }
 
+        // GET api/value
+        [HttpGet]
         public IEnumerable<ValueModel> GetAll()
         {
             return repo.GetAll();
