@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Kdnc.App.API.Repositories;
+using Kdnc.App.Domain.DataAccess;
 using Kdnc.App.Repository.DatabaseContext;
+using Kdnc.App.Repository.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -68,7 +70,8 @@ namespace Kdnc.App.API
             });
 
             services.AddSingleton<ValueRepo>();
-            
+            services.AddScoped<IProductRepository, ProductRepository>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "Kdnc Ecommerce App", Version = "v1" });
