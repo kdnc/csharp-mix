@@ -29,16 +29,6 @@ namespace Kdnc.App.Repository.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    ArtDating = table.Column<string>(nullable: true),
-                    ArtDescription = table.Column<string>(nullable: true),
-                    ArtId = table.Column<string>(nullable: true),
-                    Artist = table.Column<string>(nullable: true),
-                    ArtistBirthDate = table.Column<DateTime>(nullable: false),
-                    ArtistDeathDate = table.Column<DateTime>(nullable: false),
-                    ArtistNationality = table.Column<string>(nullable: true),
-                    Category = table.Column<string>(nullable: true),
-                    Price = table.Column<decimal>(nullable: false),
-                    Size = table.Column<string>(nullable: true),
                     Title = table.Column<string>(nullable: true)
                 },
                 constraints: table =>

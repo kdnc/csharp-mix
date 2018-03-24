@@ -11,7 +11,7 @@ using System;
 namespace Kdnc.App.Repository.Migrations
 {
     [DbContext(typeof(ProductContext))]
-    [Migration("20180321173417_InitialDb")]
+    [Migration("20180324092306_InitialDb")]
     partial class InitialDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -61,26 +61,6 @@ namespace Kdnc.App.Repository.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<string>("ArtDating");
-
-                    b.Property<string>("ArtDescription");
-
-                    b.Property<string>("ArtId");
-
-                    b.Property<string>("Artist");
-
-                    b.Property<DateTime>("ArtistBirthDate");
-
-                    b.Property<DateTime>("ArtistDeathDate");
-
-                    b.Property<string>("ArtistNationality");
-
-                    b.Property<string>("Category");
-
-                    b.Property<decimal>("Price");
-
-                    b.Property<string>("Size");
 
                     b.Property<string>("Title");
 
