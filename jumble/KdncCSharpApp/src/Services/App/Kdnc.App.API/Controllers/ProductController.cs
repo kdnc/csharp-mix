@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Kdnc.App.Application.Models;
+using Kdnc.App.Application.Services;
 using Kdnc.App.API.Repositories;
 using Kdnc.App.Domain.DataAccess;
 using Kdnc.App.Domain.Models;
@@ -15,11 +17,11 @@ namespace Kdnc.App.API.Controllers
     [Route("api/[controller]")]
     public class ProductController : Controller
     {
-        private readonly IProductRepository repo;
+        private readonly IProductsApplicationService productApplicationService;
 
-        public ProductController(IProductRepository repo)
+        public ProductController(IProductsApplicationService productApplicationService)
         {
-            this.repo = repo;
+            this.productApplicationService = productApplicationService;
         }
 
         // GET api/product
@@ -31,9 +33,9 @@ namespace Kdnc.App.API.Controllers
 
         // POST api/product
         [HttpPost]
-        public IActionResult AddProduct([FromBody]Product product)
+        public IActionResult AddProduct([FromBody]ProductDto product)
         {
-            repo.AddProduct(product);
+            productApplicationService.SaveProduct(product);
             return Ok();
         }
     }

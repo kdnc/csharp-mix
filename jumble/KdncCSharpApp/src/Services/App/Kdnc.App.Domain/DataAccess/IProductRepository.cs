@@ -7,6 +7,6 @@ namespace Kdnc.App.Domain.DataAccess
 {
     public interface IProductRepository
     {
-        void AddProduct(Product product);
+        Product AddProduct(Product product);
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Kdnc.App.Application.Services;
 using Kdnc.App.API.Repositories;
 using Kdnc.App.Domain.DataAccess;
 using Kdnc.App.Repository.DatabaseContext;
@@ -70,7 +71,9 @@ namespace Kdnc.App.API
             });
 
             services.AddSingleton<ValueRepo>();
+
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IProductsApplicationService, ProductsApplicationService>();
 
             services.AddSwaggerGen(c =>
             {

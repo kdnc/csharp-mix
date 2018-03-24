@@ -9,18 +9,19 @@ namespace Kdnc.App.Repository.Repositories
 {
     public class ProductRepository : IProductRepository
     {
-        private ProductContext _context;
+        private readonly ProductContext _productContext;
 
-        public ProductRepository(ProductContext context)
+        public ProductRepository(ProductContext productContext)
         {
-            _context = context;
+            _productContext = productContext;
         }
 
-        public void AddProduct(Product product)
+        public Product AddProduct(Product product)
         {
     //      product.Id = Guid.NewGuid();
-            _context.Products.Add(product);
-            _context.SaveChanges();
+            _productContext.Products.Add(product);
+            int effectedRowCount = _productContext.SaveChanges();
+            return product;
         }
 
     }
