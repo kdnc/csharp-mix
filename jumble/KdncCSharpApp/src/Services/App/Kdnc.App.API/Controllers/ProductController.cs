@@ -36,7 +36,7 @@ namespace Kdnc.App.API.Controllers
         public IActionResult AddProduct([FromBody]ProductDto product)
         {
             productApplicationService.SaveProduct(product);
-            return Ok();
+            return Ok(product);
         }
     }
 }
