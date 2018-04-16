@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kdnc.App.Repository", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kdnc.App.Application", "src\Services\App\Kdnc.App.Application\Kdnc.App.Application.csproj", "{3B959D44-892B-4FFC-BFB1-C08A49AA0C3C}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{FC6C17BE-1EBB-4A32-9889-3D1B47150F8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{3B959D44-892B-4FFC-BFB1-C08A49AA0C3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B959D44-892B-4FFC-BFB1-C08A49AA0C3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B959D44-892B-4FFC-BFB1-C08A49AA0C3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC6C17BE-1EBB-4A32-9889-3D1B47150F8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC6C17BE-1EBB-4A32-9889-3D1B47150F8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC6C17BE-1EBB-4A32-9889-3D1B47150F8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC6C17BE-1EBB-4A32-9889-3D1B47150F8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
