@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  kdnc.app.api:
+    image: kdnc.app.api
+    build:
+      context: .
+      dockerfile: src/Services/App/Kdnc.App.API/Dockerfile
+
+  kdnc.app.web:
+    image: kdnc.app.web
+    build:
+      context: .
+      dockerfile: src/Services/App/Kdnc.App.Web/Dockerfile
+
