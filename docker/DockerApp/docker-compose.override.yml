@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  kdnc.app.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
