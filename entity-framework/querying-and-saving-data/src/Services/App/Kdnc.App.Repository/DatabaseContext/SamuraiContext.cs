@@ -1,5 +1,6 @@
 ﻿using Kdnc.App.Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Kdnc.App.Repository.DatabaseContext
 {
@@ -16,8 +17,16 @@ namespace Kdnc.App.Repository.DatabaseContext
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<SamuraiBattle>()
-                .HasKey(s => new { s.BattleId, s.SamuraiId });
-            base.OnModelCreating(modelBuilder);
+                .HasKey(s => new { s.SamuraiId, s.BattleId });
+            modelBuilder.Entity<Battle>().Property(b => b.StartDate).HasColumnType("Date");
+            modelBuilder.Entity<Battle>().Property(b => b.EndDate).HasColumnType("Date");
+            foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+            {
+                modelBuilder.Entity(entityType.Name).Property<DateTime>("Created");
+                modelBuilder.Entity(entityType.Name).Property<DateTime>("LastModified");
+            }
+            modelBuilder.Entity<Samurai>().OwnsOne(s => s.BetterName).Property(b => b.GivenName).HasColumnName("GivenName");
+            modelBuilder.Entity<Samurai>().OwnsOne(s => s.BetterName).Property(b => b.SurName).HasColumnName("SurName");
         }
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

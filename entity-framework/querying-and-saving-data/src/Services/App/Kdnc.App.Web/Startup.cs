@@ -43,7 +43,7 @@ namespace Kdnc.Web
         {
             loggerFactory.AddConsole();
 
-            app.UseAuthentication();
+//            app.UseAuthentication();
             app.UseDeveloperExceptionPage();
 
             app.UseStaticFiles();

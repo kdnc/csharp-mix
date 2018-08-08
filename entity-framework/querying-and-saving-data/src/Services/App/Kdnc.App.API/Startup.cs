@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Kdnc.App.Application.Services;
 using Kdnc.App.Domain.DataAccess;
 using Kdnc.App.Repository.DatabaseContext;
+using Kdnc.App.Repository.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -57,6 +59,9 @@ namespace Kdnc.App.API
                 cfg.UseSqlServer(_config.GetConnectionString("SamuraiConnection"));
             });
 
+            services.AddScoped<ISamuraiRepository, SamuraiRepository>();
+            services.AddScoped<ISamuraisApplicationService, SamuraisApplicationService>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "Kdnc Ecommerce App", Version = "v1" });
@@ -85,7 +90,7 @@ namespace Kdnc.App.API
 
             app.UseCors(builder => builder.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
             
-            app.UseAuthentication();
+//            app.UseAuthentication();
             app.UseMvcWithDefaultRoute();
             app.UseMvc();
         }
