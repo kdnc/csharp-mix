@@ -6,6 +6,22 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
+	<!-- 
+	Step 1
+	Add following nuget package
+	-->
+    <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="2.2.6" />
+  </ItemGroup>
+
+  <!-- 
+  Step 2
+  Add CopyToOutputDirectory tag, otherwise following error would come
+  System.IO.FileNotFoundException: 'Could not find file 'C:\D\projects\reference-applications\csharp-mix\asp.net-mvc\logging\logging-with-log4net\Kdnc.App.Web\bin\Debug\netcoreapp2.1\log4net.config'.'
+  -->
+  <ItemGroup>
+	<Content Update="log4net.config">
+		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</Content>
   </ItemGroup>
 
 </Project>

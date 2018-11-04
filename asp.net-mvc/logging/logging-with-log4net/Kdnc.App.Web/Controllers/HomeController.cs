@@ -5,11 +5,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Kdnc.App.Web.Models;
+// Step 9 - Add following import statement
+using log4net;
 
 namespace Kdnc.App.Web.Controllers
 {
     public class HomeController : Controller
     {
+        // Step 10 - Get a reference to the logger
+        protected static readonly ILog log = LogManager.GetLogger(typeof(HomeController));
+
         public IActionResult Index()
         {
             return View();
@@ -17,6 +22,9 @@ namespace Kdnc.App.Web.Controllers
 
         public IActionResult About()
         {
+            // Step 11 - Log a debug message
+            log.DebugFormat("{0,20} {1,20}", "About", "About view requested.");
+
             ViewData["Message"] = "Your application description page.";
 
             return View();
