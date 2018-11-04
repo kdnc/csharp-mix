@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-// Step 6 - Add following import statement
+// Kdnc Step 6 - Add following import statement
 using Microsoft.Extensions.Logging;
 
 namespace Kdnc.App.Web
@@ -38,7 +38,7 @@ namespace Kdnc.App.Web
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        // Step 7 - Add loggerFactory parameter
+        // Kdnc Step 7 - Add loggerFactory parameter
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
@@ -51,7 +51,7 @@ namespace Kdnc.App.Web
                 app.UseHsts();
             }
 
-            // Step 8 - Add log4net
+            // Kdnc Step 8 - Add log4net
             loggerFactory.AddLog4Net();
 
             app.UseHttpsRedirection();
