@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace test
+namespace Kdnc.App.Classes.Properties.AutomaticallyImplementedProperties
 {
     // Now the properties don’t have any code (or visible variables!) 
     // associated with them
