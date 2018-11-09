@@ -6,4 +6,9 @@
     <RootNamespace>csharp_language</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Delegates\02-delegates-as-static-members\" />
+    <Folder Include="Delegates\03-delegates-as-anonymous-methods\" />
+  </ItemGroup>
+
 </Project>
